@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Carrara Pets",
+    "slug": "carraraPets",
+    "version": "1.0.0",
+    "icon": "./src/assets/icons/icon.png",
+    "splash": {
+      "image": "./src/assets/splash/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5636D3"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icons/adaptiveIcon.png",
+        "backgroundColor": "#fff"
+      },
+      "package": "com.guuisr07.carraraPets"
+    }
+  }
+}
