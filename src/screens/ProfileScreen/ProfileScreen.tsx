@@ -194,12 +194,6 @@ export const ProfileScreen: React.FC<any> = ({ }) => {
             <IconSearch name={'search'} />
             <LabelInputButton>Para onde vamos?</LabelInputButton>
           </ButtonInput>
-          <MapContainer>
-            <MapView
-              style={{ flex: 1, borderRadius: 20, zIndex: -20 }}
-              provider={PROVIDER_GOOGLE}
-            />
-          </MapContainer>
         </ContainerButton>
 
         <MenuOptions>

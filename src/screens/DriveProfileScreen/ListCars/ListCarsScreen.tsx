@@ -90,11 +90,13 @@ export const ListCarsScreen: React.FC<any> = ({ }) => {
 
 // ListCarsScreen.tsx
 
+// ListCarsScreen.tsx
+
 import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { Coordinator } from '../../../navigation/coordinator/coordinator';
 import { ProfileMenuOptions } from '../../ProfileScreen/ProfileMenuOptions';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -133,7 +135,7 @@ const IconBack = styled<any>(Feather)`
   margin-bottom: 36px;
 `;
 
-const AddPaymentIcon = styled<any>(Feather)`
+const AddPaymentIcon = styled<any>(Ionicons)`
   font-size: 30px;
   color: ${({ theme }) => theme.colors.text_dark};
 `;
@@ -186,7 +188,7 @@ export const ListCarsScreen: React.FC<any> = () => {
       <ContainerAddPayment>
         <TitleContainerPayment>Adicionar Carro</TitleContainerPayment>
         <TouchableOpacity onPress={() => Coordinator.goCreateCar()}>
-          <AddPaymentIcon name={'plus'} />
+          <AddPaymentIcon name={'ios-add-circle-sharp'} />
         </TouchableOpacity>
       </ContainerAddPayment>
 
@@ -198,6 +200,7 @@ export const ListCarsScreen: React.FC<any> = () => {
           onPress={() => Coordinator.goListCarsScreen()}
         />
       ))}
+      <CreateCar handleAddCar={handleAddCar} />
     </StyledContainer>
   );
 };

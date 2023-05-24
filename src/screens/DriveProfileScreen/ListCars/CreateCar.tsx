@@ -1,24 +1,25 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/native'
-import { CustomHeader } from '../../../components/CustomHeader/CustomHeader'
+import React, { useState } from 'react';
+import styled from 'styled-components/native';
+import { CustomHeader } from '../../../components/CustomHeader/CustomHeader';
+import { ListCarsScreen } from './ListCarsScreen';
 
 const StyledContainer = styled.View`
   flex: 1;
   background-color: white;
-`
+`;
 
 const StyledForm = styled.View`
   padding: 20px;
-`
+`;
 
 const StyledTextInput = styled.TextInput`
   height: 40px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   padding: 5px;
-`
+`;
 
-const StyledButton = styled.Button``
+const StyledButton = styled.Button``;
 
 interface Vehicle {
     make: string;
@@ -40,14 +41,14 @@ export const CreateCar: React.FC<CreateCarProps> = ({ handleAddCar }) => {
         make: '',
         model: '',
         year: '',
-    })
+    });
 
     const handleChange = (name: keyof Vehicle, value: string) => {
-        setVehicle(prevVehicle => ({
+        setVehicle((prevVehicle) => ({
             ...prevVehicle,
             [name]: value,
-        }))
-    }
+        }));
+    };
 
     const handleSubmit = () => {
         const newCar: Car = {
@@ -61,8 +62,10 @@ export const CreateCar: React.FC<CreateCarProps> = ({ handleAddCar }) => {
             make: '',
             model: '',
             year: '',
-        })
-    }
+        });
+
+        console.log('Botão "Cadastrar" pressionado!');
+    };
 
     return (
         <StyledContainer>
@@ -71,20 +74,20 @@ export const CreateCar: React.FC<CreateCarProps> = ({ handleAddCar }) => {
                 <StyledTextInput
                     placeholder="Marca"
                     value={vehicle.make}
-                    onChangeText={value => handleChange('make', value)}
+                    onChangeText={(value) => handleChange('make', value)}
                 />
                 <StyledTextInput
                     placeholder="Modelo"
                     value={vehicle.model}
-                    onChangeText={value => handleChange('model', value)}
+                    onChangeText={(value) => handleChange('model', value)}
                 />
                 <StyledTextInput
                     placeholder="Ano"
                     value={vehicle.year}
-                    onChangeText={value => handleChange('year', value)}
+                    onChangeText={(value) => handleChange('year', value)}
                 />
                 <StyledButton title="Cadastrar" onPress={handleSubmit} />
             </StyledForm>
         </StyledContainer>
-    )
-}
+    );
+};
